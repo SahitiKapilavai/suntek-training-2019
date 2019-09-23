@@ -382,6 +382,26 @@ y:printf("The missing value is: %d",r);
 4.)Given an unsorted integer array, find the first repetitive positive integer.
 
 Code:
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+  int n,a[10],i;
+  printf("Enter the size of array: ");
+  scanf("%d",&n);
+  printf("Enter %d elements");
+  for (i=0;i<n;i++)
+  scanf("%d",&a[i]);
+  printf("The repeating elements are: ");
+  for (i=0;i<n;i++)
+  {
+    if (a[abs(a[i])] >= 0)
+      a[abs(a[i])] = -a[abs(a[i])];
+    else
+      printf(" %d ", abs(a[i]));
+  }
+  return 0;
+}
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
